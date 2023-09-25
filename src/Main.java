@@ -26,7 +26,7 @@ public class Main  {
     }
 
     public static void main(String[] args) {
-        int n = sc.nextInt();
+        int n = random.nextInt(20);
         for(int i=0; i<n; i++){
             customer.add(new Customer());
             customer.get(i).arrivalTime = random.nextInt(10)+1;
