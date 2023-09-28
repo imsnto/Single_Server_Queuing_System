@@ -1,25 +1,27 @@
-import java.util.Comparator;
-
 public class Customer {
     private int arrivalTime;
-    private int departureTime;
-    private int startTime;
     private int executionTime;
+    private int waitingTime;
+    private int startTime;
+    private int completionTime;
+    private int id;
 
-    public int getArrivalTime() {
-        return arrivalTime;
-    }
-
-    public void setArrivalTime(int arrivalTime) {
+    public Customer( int id, int arrivalTime, int executionTime, int waitingTime, int startTime, int completionTime) {
         this.arrivalTime = arrivalTime;
+        this.executionTime = executionTime;
+        this.waitingTime = waitingTime;
+        this.startTime = startTime;
+        this.completionTime = completionTime;
+        this.id = id;
     }
 
-    public int getDepartureTime() {
-        return departureTime;
+    public int getWaitingTime() {
+        return waitingTime;
     }
 
-    public void setDepartureTime(int departureTime) {
-        this.departureTime = departureTime;
+
+    public void setWaitingTime(int waitingTime) {
+        this.waitingTime = waitingTime;
     }
 
     public int getStartTime() {
@@ -30,6 +32,19 @@ public class Customer {
         this.startTime = startTime;
     }
 
+    public int getCompletionTime() {
+        return completionTime;
+    }
+
+    public void setCompletionTime(int completionTime) {
+        this.completionTime = completionTime;
+    }
+
+    public Customer(int arrivalTime, int executionTime, int id){
+        this.arrivalTime = arrivalTime;
+        this.executionTime = executionTime;
+        this.id = id;
+    }
     public int getExecutionTime() {
         return executionTime;
     }
@@ -38,24 +53,21 @@ public class Customer {
         this.executionTime = executionTime;
     }
 
-    public int getWaitingTime() {
-        return waitingTime;
+
+
+    public int getArrivalTime() {
+        return arrivalTime;
     }
 
-    public void setWaitingTime(int waitingTime) {
-        this.waitingTime = waitingTime;
-    }
-
-    private int waitingTime;
-
-    public Customer(int arrivalTime, int executionTime) {
+    public void setArrivalTime(int arrivalTime) {
         this.arrivalTime = arrivalTime;
-        this.executionTime = executionTime;
     }
-}
-class MyComparator implements Comparator<Customer> {
-    @Override
-    public int compare(Customer c, Customer c2) {
-        return Integer.compare(c.getArrivalTime(), c2.getArrivalTime());
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
